@@ -1,0 +1,38 @@
+<!-- logo SMALL in header -->
+<div class="user-header">
+  <h1 class="username"> <%= @user.name %> </h1>
+  <img src="" alt="profile image">
+</div>
+<div class="user-main">
+
+  <% @songs.each do |song| %>
+
+  <div class="song">
+    <img src=" <%= song.img %> " alt="" class="song-img">
+    <div class="song-info">
+      <h2 class="song-title"> <%= song.title %> </h2>
+      <h3 class="song-artist"> <%= song.artist %> </h3>
+    </div>
+    <h3 class="song-time"> <%= song.search_time %> </h3>
+  </div>
+
+  <% end %>
+
+</div>
+
+
+<!-- messenger -->
+<div class="messenger-links">
+  
+  <h2 class="messenger-title">Conversations</h2>
+
+  <% @conversations.each do |person| %>
+
+  <div class="convo-icon">
+    <img src=" <%= person.user_img %> " alt="">
+    <h1 class="message-title"> <%= person.username %> </h1>
+  </div>
+
+  <% end %>
+
+</div>
