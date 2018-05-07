@@ -28,4 +28,4 @@ rails g model search
 * Deployment instructions
 
 * Authors 
-Franzzisco Arrieta, Devatanu Deka, Michael Hebblethwaite, Matilda Rutherford
+[Franzzisco Arrieta](https://github.com/Franzzisco), [Devatanu Deka](https://github.com/devadeka), [Michael Hebblethwaite](https://github.com/michebble), [Matilda Rutherford](https://github.com/matilda26)
