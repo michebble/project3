@@ -23,6 +23,7 @@ gem 'spotify-client'
 # add OAuth for spotify
 gem 'omniauth-spotify'
 
+gem 'httparty'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
