@@ -1,11 +1,19 @@
-<h1> <%= @user.name %></h1>
+
+<div class="user-header">
+  <h1 class="username"> <%= @user.name %> </h1>
+  <div class="profile-pic"></div>
+  <!-- <img src="/assets/images/profile_pic.png" alt=""> -->
+</div>
 
 <div class="user-main">
   <% @search.each do |song| %>
-    <div class="">
-      <img src=" <%= song.img_url %> " alt="" class="song-img">
-      <h2 class="song-title"><%= song.song_name %> </h2>
+    <div class="song-div">
+      <div class="song-pic"></div>
+      <!-- <img src=" <%= song.img_url %> " alt="" class="song-img"> -->
+      <div class="song-info">
+        <h2 class="song-title"><%= song.song_name %> </h2>
         <h3 class="song-artist"> <%= song.artist %>  </h3>
+      </div>
     </div>
   <% end %>
 

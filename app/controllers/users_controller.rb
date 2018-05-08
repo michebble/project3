@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
   def index
     # this can be changed in the future
+    # @user = User.find(params[:id])
     @search = Search.all.order('created_at DESC')
   end
 
