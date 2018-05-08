@@ -1,9 +1,13 @@
+require 'httparty'
+
 class SessionController < ApplicationController
 
     def new
     end
 
     def spotify_session
+        access_token = params[:access_token]
+        response = HTTParty.get("")
     end
 
     def create
