@@ -3,12 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
-.user-header img {
-  width: 50px;
-  height: 50px;
+.profile-pic {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  background-color: blue;
+  border: 2px solid red;
 }
+// .user-header img {
+//   width: 400px;
+//   height: 400px;
+//   border-radius: 50%;
+//   background-color: blue;
+// }
 .convo-icon img {
   width: 20px;
   height: 20px;
