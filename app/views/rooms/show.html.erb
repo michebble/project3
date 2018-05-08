@@ -11,8 +11,32 @@
 
 </div>
 <div class="write">
-  <form action="">
-    <input type="text" name="message" placeholder="type message...">
+  <form action="/room" method="post">
+    <input type="hidden" id="room_id" value="<%= @room_id %>">
+    <input type="text" id="message" placeholder="type message...">
     <button class="message-submit">send</button>
   </form>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+  var $submitBtn = $('.message-submit');
+
+  $submitBtn.on('click', function (event) {
+    event.preventDefault();
+    var options = {
+      url: '/room',
+      data: {
+        content: $("#message").val(),
+        room_id: $('#room_id').val()
+      },
+      method: 'post'
+    }
+    $.ajax(options).done(function(res) {
+
+      $('.likes-count').text(res.likes_count)
+    });
+  })
+
+
+</script>
