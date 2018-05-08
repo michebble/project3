@@ -1,9 +1,8 @@
 <div class="user-header">
-  <%= @song_response['is_playing'] %>
-  <% if (@song_response.code == 200) && @song_response['is_playing'] %>
-    <h2> <%= @song_response['item']['name'] %> by <%= @song_response['item']['artist'] %> </h2>
-    <img src="<%= @song_response['item']['album']['images'][2]['url'] %>" alt="">
-    <a href="/match/">SEARCH</a>
+  <% if (@song_response.code == 200 && @song_response['is_playing']) %>
+    <h2> <%= @song_name %> by <%= @song_artist %> </h2>
+    <img src="<%= @song_image_url %>" alt="">
+    <a href="<%= @match_url %>">SEARCH</a>
   <% else %>
     <h1 class="username"> LISTEN TO A SONG MAN!! </h1>
   <% end %>
