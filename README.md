@@ -13,11 +13,7 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-```
-rails g model user
 
-rails g model search
-```
 
 * Database initialization
 
