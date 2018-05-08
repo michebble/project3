@@ -39,7 +39,6 @@ class SessionController < ApplicationController
             redirect_to "/users/#{user.id}"
         end
 
-        render json: user_response
     end
 
 

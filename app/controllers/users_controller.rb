@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @search = Search.all.order('created_at DESC')
+    @search = Search.find_by(spotify_id: @user.spotify_id).order('created_at DESC')
   end
 
 end
