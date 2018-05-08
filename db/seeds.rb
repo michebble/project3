@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Search.destroy_all
+User.destroy_all
+
+uno = User.create( name: 'Tony' )
+
+
+one = Search.create( song_name: "Knives Out", artist: "Radiohead" , user_id: User.first.id)
+
+two = Search.create( song_name: "Fly or Die", artist: "N.E.R.D" , user_id: User.first.id)
