@@ -21,6 +21,9 @@ class UsersController < ApplicationController
   # def show
   #   @user = User.find(params[:id])
   # end
+  def comments
+    @user = current_user
+  end
 
   def index
     # this can be changed in the future
