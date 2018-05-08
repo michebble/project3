@@ -1,0 +1,12 @@
+<h1> <%= @user.name %></h1>
+
+<div class="user-main">
+  <% @search.each do |song| %>
+    <div class="">
+      <img src=" <%= song.img_url %> " alt="" class="song-img">
+      <h2 class="song-title"><%= song.song_name %> </h2>
+        <h3 class="song-artist"> <%= song.artist %>  </h3>
+    </div>
+  <% end %>
+
+</div>
