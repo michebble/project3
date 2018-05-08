@@ -1,18 +1,17 @@
 <div class="message-div">
 
-
-
-
-
-
-
-
+  <% @messages.each do |message| %>
+<h3 class="message-user"> <%= message.user_id %> </h3>
+<h2 class="message-content"> <%= message.content %> </h2>
+<h3 class="message-date"> <%= message.created_at %></h3>
+  <% end %>
 
 
 </div>
 <div class="write">
   <form action="/room" method="post">
     <input type="hidden" id="room_id" value="<%= @room_id %>">
+    <!-- The above information can be pass like conversation_id -->
     <input type="text" id="message" placeholder="type message...">
     <button class="message-submit">send</button>
   </form>
