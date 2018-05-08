@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   post '/session', to: 'session#create'
   delete '/session', to: 'session#destroy'
 
-  get '/callback/', to: 'session#spotify_session'
+  get '/callback/', to: 'session#spotify_callback'
 end

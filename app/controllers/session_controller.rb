@@ -1,13 +1,15 @@
-require 'httparty'
+# require 'httparty'
 
 class SessionController < ApplicationController
 
     def new
+        p "ENV::::::#{ENV['CLIENT_ID']}"
+        @spotify_service = "https://accounts.spotify.com/authorize/?client_id=#{ENV['CLIENT_ID']}&response_type=code&scope=user-read-private&redirect_uri=http://localhost:3000/callback/"
     end
 
-    def spotify_session
-        access_token = params[:access_token]
-        response = HTTParty.get("")
+    def spotify_callback
+        # access_token = params[:access_token]
+        p params
     end
 
     def create
