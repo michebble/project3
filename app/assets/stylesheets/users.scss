@@ -3,13 +3,55 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.user-header {
+  padding: 300px 50px 50px 50px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+
+}
+.username {
+  font-size: 6em;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background-color: blue;
-  border: 2px solid red;
 }
+
+.user-main {
+  margin: 0 50px;
+  width: 90vw;
+}
+.song-div {
+  display: flex;
+  align-items:center;
+  margin-top: 20px;
+}
+.song-pic {
+  width: 150px;
+  height: 150px;
+  background-color: lightblue;
+}
+.song-info {
+  padding-left: 50px;
+}
+h2 {
+  font-size: 3em;
+  margin: 0;
+}
+h3 {
+  font-size: 2em;
+  font-weight: normal;
+  margin:0;
+}
+
 // .user-header img {
 //   width: 400px;
 //   height: 400px;
