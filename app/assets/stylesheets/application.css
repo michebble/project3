@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 375px;
+  height: 667px;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
