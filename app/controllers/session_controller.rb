@@ -25,7 +25,7 @@ class SessionController < ApplicationController
         
         user = User.find_by(user_id: user_response['id'])
         if !!user
-            redirect_to /users/#{user.id
+            redirect_to "/users/#{user.id}"
         else
             user = User.new
             user.user_id = user_response['id']
@@ -33,27 +33,13 @@ class SessionController < ApplicationController
             user.img_url = user_response['images'].empty? ? "http://via.placeholder.com/50x50" : user_response['images'][0]['url']
             user.spotify_auth = access_response['refresh_token']
             user.save
-            raise 'ERROR'
-            redirect_to '/users/:id'
-        end
-        
-        render json: user_response
-        redirect_to '/'
-        
-
-       
-
-    end
-
-    def create
-        user = User.find_by(spotify_auth: params[:spotify_auth])
-        if !!user
+            session[:spotify_id] = user.spotify_id
             session[:access_token] = params[:access_token]
             session[:refresh_token] = params[:refresh_token]
-            redirect_to '/login'
-        else
-            render :new
+            redirect_to "/users/#{user.id}"
         end
+
+        render json: user_response
     end
 
 
