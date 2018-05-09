@@ -6,8 +6,8 @@ class SearchesController < ApplicationController
     #HTTPARTY
     @song_response = HTTParty.get("https://api.spotify.com/v1/me/player/currently-playing",
       :query => {
-          :access_token => session[:access_token]
-          })
+        :access_token => session[:access_token]
+        })
     if @song_response.code == 200
       @song_id = @song_response['item']['id']
       @song_name = @song_response['item']['name']
@@ -16,7 +16,7 @@ class SearchesController < ApplicationController
       @album_name = @song_response['item']['album']['name']
 
       @match_url = "/match?song_id=#{@song_id}&song_name=#{@song_name}&artist=#{@song_artist}&img_url=#{@album_image_url}&album=#{@album_name}"
-      
+
 
     end
 
@@ -37,19 +37,39 @@ class SearchesController < ApplicationController
     search.save
 
     #DB QUERY
-
-
-    #REDIRECT MATCH SHOW
-    match_search = Search.where(:song_id => search.song_id).where.not(:user_id => @user.id).where("created_at > ?", 5.minutes.ago)
-    if match_search.count > 0
-      @match_user = match_search.sample.user
+    search_matches = Search.where(:song_id => search.song_id).where.not(:user_id => @user.id).where("created_at > ?", 5.minutes.ago)
+    if search_matches.count > 0
+      matched_search = search_matches.sample
+      @match_user = matched_search.user
+      @conversation_url = create_room(@user,@match_user,matched_search)
     else
       @match_user = nil
     end
 
-
+    #REDIRECT MATCH SHOW    
     render :match
 
+  end
 
+
+  def create_room(user1, user2, search) 
+    conversation = Conversation.new
+    conversation.song_id = search.song_id
+    conversation.song_name = search.song_name
+    conversation.album_img_url = search.img_url
+    conversation.artist = search.artist
+    conversation.save
+
+    participant1 = Participant.new
+    participant1.user = user1
+    participant1.conversation = conversation
+    participant1.save
+    
+    participant2 = Participant.new
+    participant2.user = user2
+    participant2.conversation = conversation
+    participant2.save
+
+    return "/room?room_id=#{conversation.id}"
   end
 end

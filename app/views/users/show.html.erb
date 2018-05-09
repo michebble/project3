@@ -1,22 +1,27 @@
 
 <div class="user-header">
   <h1 class="username"> <%= @user.name %> </h1>
-  <div class="profile-pic"></div>
-  <!-- <img src="/assets/images/profile_pic.png" alt=""> -->
+  <div class="profile-pic">
+    <img src="<%= @user.img_url%>" alt="">
+  </div>
 </div>
 
-<a href="/searches/new"> SEARCH </a>
+
 
 <div class="user-main">
   <% @searches.each do |song| %>
-    <div class="song-div">
-      <div class="song-pic"></div>
-      <!-- <img src=" <%= song.img_url %> " alt="" class="song-img"> -->
-      <div class="song-info">
+    <div class="searched-song-div">
+      <div class="song-pic">
+      <img src=" <%= song.img_url %> " alt="" class="song-img">
+      </div>
+      <div class="searched-song-info">
         <h2 class="song-title"><%= song.song_name %> </h2>
         <h3 class="song-artist"> <%= song.artist %>  </h3>
       </div>
     </div>
   <% end %>
 
+</div>
+<div class="search-btn">
+  <a href="/searches/new" > search </a>
 </div>
