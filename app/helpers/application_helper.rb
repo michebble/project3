@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def logged_in?
-    current_user ? true : false
+    !!current_user
   end
 
   def current_user
