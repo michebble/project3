@@ -8,7 +8,7 @@ class SessionController < ApplicationController
 
     def spotify_callback
         access_response = HTTParty.post("https://accounts.spotify.com/api/token",
-            :query => { 
+            :query => {
                 :grant_type => "authorization_code",
                 :code => params[:code],
                 :redirect_uri => "http://localhost:3000/callback/",
@@ -19,19 +19,18 @@ class SessionController < ApplicationController
             redirect_to '/login'
         end
         user_response = HTTParty.get("https://api.spotify.com/v1/me",
-            :query => { 
+            :query => {
                 :access_token => access_response["access_token"]
                 })
-        
-        user = User.find_by(user_id: user_response['id'])
+
+        user = User.find_by(spotify_id: user_response['id'])
         if !!user
             redirect_to "/users/#{user.id}"
         else
             user = User.new
-            user.user_id = user_response['id']
+            user.spotify_id = user_response['id']
             user.name = user_response["display_name"].nil? ? user_response["id"] : user_response["display_name"]
             user.img_url = user_response['images'].empty? ? "http://via.placeholder.com/50x50" : user_response['images'][0]['url']
-            user.spotify_auth = access_response['refresh_token']
             user.save
             session[:spotify_id] = user.spotify_id
             session[:access_token] = params[:access_token]
@@ -51,7 +50,6 @@ class SessionController < ApplicationController
 end
 
  # login_response = HTTParty.get("https://api.spotify.com/v1/me/player/currently-playing",
-        #     :query => { 
+        #     :query => {
         #         :access_token => access_response["access_token"]
         #         })
-        
