@@ -52,3 +52,9 @@ header {
 .logo-parent {
   text-decoration: none;
 }
+
+.logout {
+  font-size: 2em;
+  position: absolute;
+  right: 50px;
+}

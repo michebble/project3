@@ -2,14 +2,17 @@
 
   <% if (@song_response.code == 200 &&
    @song_response['is_playing']) %>
-    <div class="song-div">
-      <img src="<%= @album_image_url %>" alt="" class="album-img">
-      <div class="song-info">
-        <h2 class="song-title"><%= @song_name %>
-        </h2>
-        <h3 class="song-artist">
-          <%= @song_artist %>
-        </h3>
+   <div class="song-div">
+     <img src="<%= @album_image_url %>" alt="" class="album-img">
+     <div class="song-info">
+       <h2 class="search-title"><%= @song_name %> </h2>
+       <h3 class="song-artist"> <%= @song_artist %>  </h3>
+     </div>
+  </div>
+<h4>Press to search</h4>
+  <!-- <a href="<%= @match_url %>"> -->
+    <div class='container'>
+      <div id="icon" class="find-match-btn pulse-button anim-wait">
       </div>
     </div>
     <h4>Press to search</h4>
