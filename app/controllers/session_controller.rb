@@ -32,7 +32,7 @@ class SessionController < ApplicationController
           })
 
     user = User.find_by(spotify_id: user_response['id'])
-    raise 'error'
+    
     if !user.nil?
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
