@@ -1,18 +1,41 @@
 <% if @match_user.nil? %>
-  <div class="user-header">
-    <h1 class="username"> #LONEWOLF, #HIPSTER, #TOOSCHOOLFORCOOL </h1>
+  <div class="no_match_wrapper">
+
+<h1><%= @song_response %></h1>
+
+    <div class="user-header">
+
+      <div class='container no_match'>
+        <div id="icon" class="find-match-btn "></div>
+      </div>
+
+      <div class="search-btn">
+        <a href="/searches/new">
+          Try again
+        </a>
+      </div>
+
+    </div>
+
   </div>
 <% else %>
   <div class="user-header">
-    <h2> <%= @user.name %> </h2>
-    <h4> matched with </h4>
-    <h2> <%= @match_user.name %> </h2>
+    <h2>
+      <%= @user.name %>
+    </h2>
+    <h4>
+      matched with
+    </h4>
+    <h2>
+      <%= @match_user.name %>
+    </h2>
   </div>
 
   <div class="user-main">
-    <a href="<%=  %>">  </a>
+    <a href="<%=  %>"></a>
 
-      <a href="<%= @conversation_url %>">Start Conversation </a>
+    <a href="<%= @conversation_url %>">Start Conversation
+    </a>
 
   </div>
 <% end %>
