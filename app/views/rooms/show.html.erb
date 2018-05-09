@@ -1,11 +1,15 @@
 <div class="message-div">
 
   <% @messages.each do |message| %>
-<h3 class="message-user"> <%= message.user_id %> </h3>
-<h2 class="message-content"> <%= message.content %> </h2>
-<h3 class="message-date"> <%= message.created_at %></h3>
+    <h3 class="message-user">
+      <%= message.user_id %>
+    </h3>
+    <h2 class="message-content">
+      <%= message.content %>
+    </h2>
+    <h3 class="message-date">
+      <%= message.created_at %></h3>
   <% end %>
-
 
 </div>
 <div class="write">
@@ -31,11 +35,9 @@
       },
       method: 'post'
     }
-    $.ajax(options).done(function(res) {
+    $.ajax(options).done(function (res) {
 
       $('.likes-count').text(res.likes_count)
     });
   })
-
-
 </script>
