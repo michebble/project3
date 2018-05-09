@@ -1,10 +1,20 @@
-<div class="user-header">
-  <% if @match_user.nil? %>
+<% if @match_user.nil? %>
+  <div class="user-header">
     <h1 class="username"> #LONEWOLF, #HIPSTER, #TOOSCHOOLFORCOOL </h1>
-  <% else %>
-    
+  </div>
+<% else %>
+  <div class="user-header">
     <h2> <%= @user.name %> </h2>
     <h4> matched with </h4>
     <h2> <%= @match_user.name %> </h2>
-  <% end %>
-</div>
+  </div>
+
+  <div class="user-main">
+    <a href="<%=  %>">  </a>
+
+    <form action="<%= @conversation_url %>" method="get">
+      <button class="message-submit">Start Conversation</button>
+    </form>
+
+  </div>
+<% end %>

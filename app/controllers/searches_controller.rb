@@ -16,16 +16,12 @@ class SearchesController < ApplicationController
       @album_name = @song_response['item']['album']['name']
 
       @match_url = "/match?song_id=#{@song_id}&song_name=#{@song_name}&artist=#{@song_artist}&img_url=#{@album_image_url}&album=#{@album_name}"
-    
-      
     end
 
   end
 
 
   def find_match
-
-    
     @user = User.find_by(spotify_id: session[:spotify_id])
     search = Search.new
     search.song_id = params['song_id']
@@ -37,19 +33,39 @@ class SearchesController < ApplicationController
     search.save
 
     #DB QUERY
-
-
-    #REDIRECT MATCH SHOW
-    match_search = Search.where(:song_id => search.song_id).where.not(:user_id => @user.id).where("created_at > ?", 5.minutes.ago)
-    if match_search.count > 0
-      @match_user = match_search.sample.user
+    search_matches = Search.where(:song_id => search.song_id).where.not(:user_id => @user.id).where("created_at > ?", 5.minutes.ago)
+    if search_matches.count > 0
+      matched_search = search_matches.sample
+      @match_user = matched_search.user
+      @conversation_url = create_room(@user,@match_user,matched_search)
     else
       @match_user = nil
     end
 
-    
+    #REDIRECT MATCH SHOW    
     render :match
 
+  end
 
+
+  def create_room(user1, user2, search) 
+    conversation = Conversation.new
+    conversation.song_id = search.song_id
+    conversation.song_name = search.song_name
+    conversation.album_img_url = search.img_url
+    conversation.artist = search.artist
+    conversation.save
+
+    participant1 = Participant.new
+    participant1.user = user1
+    participant1.conversation = conversation
+    participant1.save
+    
+    participant2 = Participant.new
+    participant2.user = user2
+    participant2.conversation = conversation
+    participant2.save
+
+    return "/room?room_id=#{conversation.id}"
   end
 end
