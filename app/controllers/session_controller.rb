@@ -8,7 +8,7 @@ class SessionController < ApplicationController
   end
 
   def spotify_callback
-    raise "sdsd"
+    
     access_response = HTTParty.post("https://accounts.spotify.com/api/token",
       :query => {
         :grant_type => "authorization_code",
