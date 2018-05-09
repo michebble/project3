@@ -36,16 +36,13 @@
   width: 100%;
   height: 250px;
 }
-
-.song-pic {
-  width: 150px;
-  height: 150px;
-  background-color: lightblue;
+.song-info {
+  overflow: scroll;
 }
 
 .album-img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin-right: 20px;
 }
 
@@ -114,7 +111,7 @@ h4 {
   }
 }
 @-webkit-keyframes pulse-wait {
-  90% {
+  50% {
     transform: scale(.9);
   }
 
