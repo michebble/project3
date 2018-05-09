@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @search = @user.searches.limit(5).order('created_at DESC')
+    @searches = @user.searches.limit(5).order('created_at DESC')
   end
 
 end
