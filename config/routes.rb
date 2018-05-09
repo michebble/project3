@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/room', to: 'rooms#show'
 
   get '/callback/', to: 'session#spotify_callback'
+  get '/match/', to: 'searches#find_match'
 end

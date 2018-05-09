@@ -1,5 +1,3 @@
-# require 'httparty'
-
 class SessionController < ApplicationController
 
     def new
@@ -18,13 +16,19 @@ class SessionController < ApplicationController
         if access_response.keys.include? "error"
             redirect_to '/login'
         end
+
+        session[:access_token] = access_response["access_token"]
+        session[:refresh_token] = access_response["refresh_token"]
+
+
         user_response = HTTParty.get("https://api.spotify.com/v1/me",
             :query => {
-                :access_token => access_response["access_token"]
+                :access_token => session[:access_token]
                 })
 
         user = User.find_by(spotify_id: user_response['id'])
         if !!user
+            session[:spotify_id] = user.spotify_id
             redirect_to "/users/#{user.id}"
         else
             user = User.new
@@ -33,12 +37,10 @@ class SessionController < ApplicationController
             user.img_url = user_response['images'].empty? ? "http://via.placeholder.com/50x50" : user_response['images'][0]['url']
             user.save
             session[:spotify_id] = user.spotify_id
-            session[:access_token] = params[:access_token]
-            session[:refresh_token] = params[:refresh_token]
+
             redirect_to "/users/#{user.id}"
         end
 
-        render json: user_response
     end
 
 
@@ -48,8 +50,3 @@ class SessionController < ApplicationController
     end
 
 end
-
- # login_response = HTTParty.get("https://api.spotify.com/v1/me/player/currently-playing",
-        #     :query => {
-        #         :access_token => access_response["access_token"]
-        #         })
