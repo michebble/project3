@@ -1,7 +1,9 @@
 class SessionController < ApplicationController
 
     def new
-        @spotify_service = "https://accounts.spotify.com/authorize/?client_id=#{ENV['CLIENT_ID']}&response_type=code&scope=user-read-private%20user-read-currently-playing&redirect_uri=http://#{ENV['INTUNED_CALLBACK']}/callback/"
+        @spotify_service = "https://accounts.spotify.com/authorize/?client_id=#{ENV['CLIENT_ID']}&response_type=code&scope=user-read-private%20user-read-currently-playing&redirect_uri=#{ENV['INTUNED_CALLBACK']}/callback/"
+
+        
     end
 
     def spotify_callback
@@ -9,7 +11,7 @@ class SessionController < ApplicationController
             :query => { 
                 :grant_type => "authorization_code",
                 :code => params[:code],
-                :redirect_uri => "http://#{ENV['INTUNED_CALLBACK']}/callback/",
+                :redirect_uri => "#{ENV['INTUNED_CALLBACK']}/callback/",
                 :client_id => ENV['CLIENT_ID'],
                 :client_secret => ENV['CLIENT_SECRET']
                 })
