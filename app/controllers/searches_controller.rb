@@ -6,8 +6,8 @@ class SearchesController < ApplicationController
     #HTTPARTY
     @song_response = HTTParty.get("https://api.spotify.com/v1/me/player/currently-playing",
       :query => {
-          :access_token => session[:access_token]
-          })
+        :access_token => session[:access_token]
+        })
     if @song_response.code == 200
       @song_id = @song_response['item']['id']
       @song_name = @song_response['item']['name']
@@ -16,7 +16,7 @@ class SearchesController < ApplicationController
       @album_name = @song_response['item']['album']['name']
 
       @match_url = "/match?song_id=#{@song_id}&song_name=#{@song_name}&artist=#{@song_artist}&img_url=#{@album_image_url}&album=#{@album_name}"
-      
+
 
     end
 
