@@ -14,10 +14,19 @@
     <header>
       <div class="logo"></div>
       <% if logged_in?%>
-        <a href="/user/<%= current_user.id %>"><h1 class="logo-text">InTuneD</h1></a>
+        <a href="/users/<%= current_user.id %>"><h1 class="logo-text">InTuneD</h1></a>
       <% else %>
         <a href="/login"><h1 class="logo-text">InTuneD</h1></a>
       <% end %>
+      <% if logged_in? %>
+        <form action="/session" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="_method" value="delete">
+          <button>logout</button>
+        </form>
+        
+      <% end %>
+
     </header>
     <%= yield %>
   </body>

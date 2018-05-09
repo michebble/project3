@@ -2,14 +2,13 @@ class SessionController < ApplicationController
   
   def new
 
-   
-
     @spotify_service = "https://accounts.spotify.com/authorize/?client_id=#{ENV['CLIENT_ID']}&response_type=code&scope=user-read-private%20user-read-currently-playing&redirect_uri=#{ENV['INTUNED_CALLBACK']}/callback/"
 
       
   end
 
   def spotify_callback
+    raise "sdsd"
     access_response = HTTParty.post("https://accounts.spotify.com/api/token",
       :query => {
         :grant_type => "authorization_code",
@@ -52,8 +51,14 @@ class SessionController < ApplicationController
 
 
   def destroy
+
       session[:access_token] = nil
       session[:refresh_token] = nil
+      session[:user_id] = nil
+    
+      p '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'
+      
+      redirect_to '/'
   end
 
 end
