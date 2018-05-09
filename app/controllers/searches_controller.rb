@@ -11,8 +11,13 @@ class SearchesController < ApplicationController
     if @song_response.code == 200
       @song_id = @song_response['item']['id']
       @song_name = @song_response['item']['name']
+<<<<<<< HEAD
       @song_artist = @song_response['item']['artists'].count>1 ? "#{@song_response['item']['artists'][0]['name']} and others" :  "#{@song_response['item']['artists'][0]['name']}"
       @album_image_url = @song_response['item']['album']['images'][2]['url']
+=======
+      @song_artist = @song_response['item']['artists'].count > 1 ? "#{@song_response['item']['artists'][0]['name']} and others" :  "#{@song_response['item']['artists'][0]['name']}" 
+      @album_image_url = @song_response['item']['album']['images'][0]['url']
+>>>>>>> master
       @album_name = @song_response['item']['album']['name']
 
       @match_url = "/match?song_id=#{@song_id}&song_name=#{@song_name}&artist=#{@song_artist}&img_url=#{@album_image_url}&album=#{@album_name}"
