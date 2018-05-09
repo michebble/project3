@@ -45,7 +45,7 @@ class SearchesController < ApplicationController
 
 
     #REDIRECT MATCH SHOW
-    match_search = Search.where(:song_id => Search.last.song_id).where.not(:user_id => User.last.id)
+    match_search = Search.where(:song_id => search.song_id).where.not(:user_id => @user.id).where("created_at > ?", 5.minutes.ago)
     if match_search.count > 0
       @match_user = match_search.sample.user
     else
