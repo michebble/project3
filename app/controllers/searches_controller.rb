@@ -41,7 +41,11 @@ class SearchesController < ApplicationController
 
     #REDIRECT MATCH SHOW
     match_search = Search.where(:song_id => Search.last.song_id).where.not(:user_id => User.last.id)
+<<<<<<< HEAD
     if match_search.count>0
+=======
+    if match_search.count > 0
+>>>>>>> master
       @match_user = match_search.sample.user
     else
       @match_user = nil
