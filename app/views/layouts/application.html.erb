@@ -16,9 +16,9 @@
         <%= image_tag "intune.png" %>
       </div>
       <% if logged_in?%>
-        <a href="/user/<%= current_user.id %>"><h1 class="logo-text">InTuneD</h1></a>
+        <a href="/user/<%= current_user.id %>"><h1 class="logo-text">InTune</h1></a>
       <% else %>
-        <a href="/login"><h1 class="logo-text">InTuneD</h1></a>
+        <a href="/login"><h1 class="logo-text">InTune</h1></a>
       <% end %>
     </header>
     <%= yield %>

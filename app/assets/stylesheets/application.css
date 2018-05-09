@@ -19,6 +19,7 @@
   margin: 0;
 }
 
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -45,4 +46,6 @@ header {
 }
 .logo-text {
   font-size: 6em;
+  text-decoration: none;
+  color: black;
 }

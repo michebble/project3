@@ -12,7 +12,7 @@
 
 }
 .username {
-  font-size: 6em;
+  font-size: 4em;
   padding: 0;
   margin: 0;
   font-weight: bold;
@@ -23,6 +23,12 @@
   height: 250px;
   border-radius: 50%;
   background-color: blue;
+}
+.profile-pic img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .user-main {
@@ -50,6 +56,23 @@ h3 {
   font-size: 2em;
   font-weight: normal;
   margin:0;
+}
+.search-btn {
+  background-color: red;
+  height: 200px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+.search-btn a {
+  text-align: center;
+  font-size: 4em;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: white;
 }
 
 // .user-header img {

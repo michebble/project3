@@ -1,9 +1,16 @@
-<div class="user-header">
-  <% if (@song_response.code == 200 && @song_response['is_playing']) %>
-    <h2> <%= @song_name %> by <%= @song_artist %> </h2>
-    <img src="<%= @album_image_url %>" alt="">
-    <a href="<%= @match_url %>">SEARCH</a>
+<div class="new-search-div">
+
+  <% if (@song_response.code == 200 &&
+   @song_response['is_playing']) %>
+   <div class="search-div">
+      <h2 class="search-song-info"> <%= @song_name %> by <%= @song_artist %> </h2>
+      <img src="<%= @album_image_url %>" alt="" class="album-img">
+      <div class="find-match-btn">
+        <a href="<%= @match_url %>">SEARCH</a>
+      </div>
+    </div>
   <% else %>
-    <h1 class="username"> LISTEN TO A SONG MAN!! </h1>
+    <h1 class="prompt"> You're not listening to anything. <br> No chance for love... </h1>
+
   <% end %>
 </div>

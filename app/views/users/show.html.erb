@@ -1,11 +1,12 @@
 
 <div class="user-header">
   <h1 class="username"> <%= @user.name %> </h1>
-  <div class="profile-pic"></div>
-  <!-- <img src="/assets/images/profile_pic.png" alt=""> -->
+  <div class="profile-pic">
+    <img src="<%= @user.img_url%>" alt="">
+  </div>
 </div>
 
-<a href="/searches/new"> SEARCH </a>
+
 
 <div class="user-main">
   <% @searches.each do |song| %>
@@ -19,4 +20,7 @@
     </div>
   <% end %>
 
+</div>
+<div class="search-btn">
+  <a href="/searches/new" > search </a>
 </div>
