@@ -1,9 +1,9 @@
 <div class="user-header">
   <% if (@song_response.code == 200 && @song_response['is_playing']) %>
     <h2> <%= @song_name %> by <%= @song_artist %> </h2>
-    <img src="<%= @song_image_url %>" alt="">
+    <img src="<%= @album_image_url %>" alt="">
     <a href="<%= @match_url %>">SEARCH</a>
   <% else %>
-    <h1 class="username"> LISTEN TO A SONG MAN!! </h1>
+    <a href="/users/<%= current_user.id %>"><h1 class="username"> No song playing on your spotify </h1></a>
   <% end %>
 </div>

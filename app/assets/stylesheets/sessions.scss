@@ -1,3 +1,40 @@
 .login-div {
   margin-top: 300px;
 }
+
+.login {
+  font-size: 5rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  bottom: 35px;
+  margin-left: 33%;
+  position: fixed;
+}
+// ------------------------
+
+.button {
+  background-color: rgb(255, 0, 0);
+  border: none;
+  color: white;
+  padding: 30px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(255, 0, 0);
+}
+
+.button1:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
