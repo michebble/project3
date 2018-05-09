@@ -34,19 +34,25 @@
 .user-main {
   margin: 0 50px;
   width: 90vw;
+  height: 850px;
+  overflow: scroll;
 }
-.song-div {
+.searched-song-div {
   display: flex;
   align-items:center;
   margin-top: 20px;
+
 }
-.song-pic {
+.song-img {
   width: 150px;
   height: 150px;
   background-color: lightblue;
 }
-.song-info {
+.searched-song-info {
   padding-left: 50px;
+}
+.song-title {
+  font-size: 2em;
 }
 h2 {
   font-size: 3em;

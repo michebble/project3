@@ -10,10 +10,11 @@
 
 <div class="user-main">
   <% @searches.each do |song| %>
-    <div class="song-div">
-      <div class="song-pic"></div>
-      <!-- <img src=" <%= song.img_url %> " alt="" class="song-img"> -->
-      <div class="song-info">
+    <div class="searched-song-div">
+      <div class="song-pic">
+      <img src=" <%= song.img_url %> " alt="" class="song-img">
+      </div>
+      <div class="searched-song-info">
         <h2 class="song-title"><%= song.song_name %> </h2>
         <h3 class="song-artist"> <%= song.artist %>  </h3>
       </div>
