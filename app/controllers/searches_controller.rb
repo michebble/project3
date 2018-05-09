@@ -15,7 +15,7 @@ class SearchesController < ApplicationController
       @song_artist = @song_response['item']['artists'].count>1 ? "#{@song_response['item']['artists'][0]['name']} and others" :  "#{@song_response['item']['artists'][0]['name']}"
       @album_image_url = @song_response['item']['album']['images'][2]['url']
 =======
-      @song_artist = @song_response['item']['artists'].count > 1 ? "#{@song_response['item']['artists'][0]['name']} and others" :  "#{@song_response['item']['artists'][0]['name']}" 
+      @song_artist = @song_response['item']['artists'].count > 1 ? "#{@song_response['item']['artists'][0]['name']} and others" :  "#{@song_response['item']['artists'][0]['name']}"
       @album_image_url = @song_response['item']['album']['images'][0]['url']
 >>>>>>> master
       @album_name = @song_response['item']['album']['name']
