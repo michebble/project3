@@ -2,15 +2,37 @@
 
   <% if (@song_response.code == 200 &&
    @song_response['is_playing']) %>
-   <div class="search-div">
-      <h2 class="search-song-info"> <%= @song_name %> by <%= @song_artist %> </h2>
-      <img src="<%= @album_image_url %>" alt="" class="album-img">
-      <div class="find-match-btn">
-        <a href="<%= @match_url %>">SEARCH</a>
+   <div class="song-div">
+     <img src="<%= @album_image_url %>" alt="" class="album-img">
+     <div class="song-info">
+       <h2 class="song-title"><%= @song_name %> </h2>
+       <h3 class="song-artist"> <%= @song_artist %>  </h3>
+     </div>
+  </div>
+<h4>Press to search</h4>
+  <!-- <a href="<%= @match_url %>"> -->
+    <div class='container'>
+      <div id="icon" class="find-match-btn pulse-button anim-wait">
       </div>
-    </div>
-  <% else %>
-    <h1 class="prompt"> You're not listening to anything. <br> No chance for love... </h1>
 
+    </div>
+  <!-- </a> -->
+  <script type="text/javascript">
+    var icon = document.querySelector('#icon');
+    document.querySelector('.container').addEventListener('click', function() {
+      icon.classList.remove("anim-wait");
+      icon.classList.add("anim-search");
+      setTimeout(function() {
+        location = '<%= @match_url %>'
+      }, 10000)
+    })
+
+  </script>
+
+  <% else %>
+    <h1 class="prompt"> There is only one happiness in this life, to love and to be loved.... <br><br>Listen to a song.</h1>
+    <div class="search-btn">
+      <a href="/searches/new"> search again </a>
+    </div>
   <% end %>
 </div>
