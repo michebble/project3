@@ -4,8 +4,7 @@ class RoomsController < ApplicationController
     @room_id = params[:room_id]
     @messages = Message.where(conversation_id: @room_id)
     @messages = Message.all.order('created_at DESC')
-    @participants = Participant.find_by(:conversation_id => @room_id)
-    raise ''
+    @participants = Participant.where(:conversation_id => @room_id)
   end
 
 
