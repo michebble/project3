@@ -26,23 +26,29 @@ class SearchesController < ApplicationController
   def find_match
 
     
-    user = User.find_by(spotify_id: session[:spotify_id])
-    Search.where(:user_id == user.id).destroy_all
+    @user = User.find_by(spotify_id: session[:spotify_id])
     search = Search.new
     search.song_id = params['song_id']
     search.song_name = params['song_name']
     search.artist = params['artist']
     search.img_url = params['img_url']
     search.album = params['album']
-    search.user_id = user.id
+    search.user_id = @user.id
     search.save
 
     #DB QUERY
 
 
-    raise ""
-
     #REDIRECT MATCH SHOW
+    match_search = Search.where(:song_id => Search.last.song_id).where.not(:user_id => User.last.id)
+    if !!match_search
+      @match_user = match_search.sample.user
+    else
+      @match_user = nil
+    end
+
+    
+    render :match
 
 
   end
