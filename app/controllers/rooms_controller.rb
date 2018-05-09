@@ -1,15 +1,28 @@
 class RoomsController < ApplicationController
 
   def show
-    params[:id] = 1
-    @room_id = params[:id]
-    @messages = Message.where(conversation_id: params[:id])
+    @room_id = params[:room_id]
+    @messages = Message.where(conversation_id: @room_id)
     @messages = Message.all.order('created_at DESC')
-
+    @participants = Participant.where(:conversation_id => @room_id)
   end
-  def new
+
+
+  def create
     conversation = Conversation.new
     conversation.save
+
+    participant1 = Participant.new
+    participant1.user = User.find(params[:user1_id])
+    participant1.conversation = conversation
+    participant1.save
+    
+    participant2 = Participant.new
+    participant2.user = User.find(params[:user2_id])
+    participant2.conversation = conversation
+    participant2.save
+
+    redirect_to "/room?room_id=#{conversation.id}"
   end
 
 
