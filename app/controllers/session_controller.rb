@@ -8,7 +8,7 @@ class SessionController < ApplicationController
 
     def spotify_callback
         access_response = HTTParty.post("https://accounts.spotify.com/api/token",
-            :query => { 
+            :query => {
                 :grant_type => "authorization_code",
                 :code => params[:code],
                 :redirect_uri => "#{ENV['INTUNED_CALLBACK']}/callback/",
@@ -24,10 +24,10 @@ class SessionController < ApplicationController
 
 
         user_response = HTTParty.get("https://api.spotify.com/v1/me",
-            :query => { 
+            :query => {
                 :access_token => session[:access_token]
                 })
-        
+
         user = User.find_by(spotify_id: user_response['id'])
         if !user.nil?
             session[:spotify_id] = user.spotify_id
