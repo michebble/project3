@@ -1,5 +1,9 @@
 <div class="message-div">
 
+  <% @participants.each do |participant| %>
+    <h4 class="message-user"> <%= participant.name %> </h4>
+  <% end %>  
+
   <% @messages.each do |message| %>
     <h3 class="message-user">
       <%= message.user_id %>
