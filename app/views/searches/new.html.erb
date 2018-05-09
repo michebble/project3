@@ -14,25 +14,32 @@
     <div class='container'>
       <div id="icon" class="find-match-btn pulse-button anim-wait">
       </div>
-
     </div>
-  <!-- </a> -->
-  <script type="text/javascript">
-    var icon = document.querySelector('#icon');
-    document.querySelector('.container').addEventListener('click', function() {
-      icon.classList.remove("anim-wait");
-      icon.classList.add("anim-search");
-      setTimeout(function() {
-        location = '<%= @match_url %>'
-      }, 10000)
-    })
-
-  </script>
+    <h4>Press to search</h4>
+    <!-- <a href="<%= @match_url %>"> -->
+    <div class='container'>
+      <div id="icon" class="find-match-btn pulse-button anim-wait"></div>
+    </div>
+    <!-- </a> -->
+    <script type="text/javascript">
+      var icon = document.querySelector('#icon');
+      document.querySelector('.container').addEventListener('click', function () {
+        icon.classList.remove("anim-wait");
+        icon.classList.add("anim-search");
+        setTimeout(function () {
+          location = '<%= @match_url %>'
+        }, 10000)
+      })
+    </script>
 
   <% else %>
-    <h1 class="prompt"> There is only one happiness in this life, to love and to be loved.... <br><br>Listen to a song.</h1>
+    <h1 class="prompt">
+      There is only one happiness in this life, to love and to be loved....
+      <br><br>Listen to a song.</h1>
     <div class="search-btn">
-      <a href="/searches/new"> search again </a>
+      <a href="/searches/new">
+        search again
+      </a>
     </div>
   <% end %>
 </div>

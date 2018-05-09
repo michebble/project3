@@ -2,30 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .find-match-btn {
   height: 600px;
   width: 600px;
-  background-image: url('icon.png');
+  background-image: asset-url('icon.png');
   background-size: contain;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 20px 20px 25px #7eb3ff;
   margin: 0 auto;
 }
+
 .find-match-btn h2 {
   font-size: 4em;
   color: black;
   text-decoration: none;
 }
+
 .new-search-div {
   padding-top: 400px;
   background-color: #DEECFF;
   height: 100vh;
 }
+
 .song-div {
   display: flex;
-  align-items:center;
+  align-items: center;
   position: absolute;
   bottom: 0;
   padding: 0 50px;
@@ -43,10 +45,13 @@
   height: 150px;
   margin-right: 20px;
 }
+
 .prompt {
   font-size: 4em;
   margin: 0 50px;
 }
+
+
 
 .container {
   height: 600px;
@@ -54,14 +59,26 @@
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
   margin: 0 auto;
-
 }
+
+.no_match {
+    margin-bottom: 300px;
+    margin-top: 300px;
+}
+
+.no_match_wrapper {
+  background-image: url("");
+  // background-color: yellow;
+}
+
 h4 {
   text-align: center;
   color: white;
   margin-bottom: 100px;
   font-size: 2em;
+  text-shadow: 0 0 20px #7eb3ff;
 }
+
 .pulse-button {
   position: absolute;
   top: 0;
@@ -74,20 +91,21 @@ h4 {
 .anim-wait {
   animation: pulse-wait cubic-bezier(0, 0.57, 0.32, 1.28) 1.5s infinite;
 }
+
 .anim-search {
   animation: pulse cubic-bezier(0, 0.57, 0.32, 1.28) 2.5s infinite;
 }
-
-
 @-webkit-keyframes pulse {
   90% {
     transform: scale(.9);
   }
+
   99% {
     transform: scale(1);
     box-shadow: 0 0 0 500px rgba(#5a99d4, 0);
   }
-    100% {
+
+  100% {
     transform: scale(.8);
     box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
   }
@@ -96,6 +114,7 @@ h4 {
   50% {
     transform: scale(.9);
   }
+
   100% {
     transform: scale(1);
   }
