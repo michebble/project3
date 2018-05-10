@@ -25,11 +25,11 @@
         icon.classList.add("anim-search");
         setTimeout(function () {
           var options = {
-            url: '<%= @match_url %>' 
+            url: '<%= @match_url %>'
           }
           $.ajax(options).done(function(result) {
             if (result.match_user) {
-              location = result.conversation_url
+              location = `/match?match_user_id=${result.match_user['id']}&conversation_url=${result.conversation_url}`
             }  else {
               document.querySelector('#search-prompt-txt').textContent = "No match, try again."
             }

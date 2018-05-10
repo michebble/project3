@@ -25,7 +25,7 @@ class SearchesController < ApplicationController
 
   def find_match
 
-   
+
     @user = User.find_by(spotify_id: session[:spotify_id])
     search = Search.new
     search.song_id = params['song_id']
@@ -53,12 +53,19 @@ class SearchesController < ApplicationController
 
   end
 
+  def show_match
+    @user = User.find(session[:user_id])
+    @match_user = User.find(params[:match_user_id])
+    @conversation_url = params[:conversation_url]
+    render :match
+  end
+
   def try_again
     sleep(5)
     redirect_to '/searches/new'
   end
 
-  def create_room(user1, user2, search) 
+  def create_room(user1, user2, search)
     conversation = Conversation.new
     conversation.song_id = search.song_id
     conversation.song_name = search.song_name
@@ -70,7 +77,7 @@ class SearchesController < ApplicationController
     participant1.user = user1
     participant1.conversation = conversation
     participant1.save
-    
+
     participant2 = Participant.new
     participant2.user = user2
     participant2.conversation = conversation
