@@ -26,8 +26,8 @@ body {
 }
 
 header {
-  height: 16em;
-  /* background-color: black; */
+  height: 20em;
+  background-color: white;
   width: 100vw;
   margin: 0;
   position: absolute;
@@ -38,8 +38,8 @@ header {
 }
 
 .logo img {
-  width: 12.5em;
-  height: 12.5em;
+  width: 16em;
+  height: 16em;
   object-fit: contain;
 }
 
@@ -48,7 +48,7 @@ header {
 }
 
 .logo-text {
-  font-size: 6em;
+  font-size: 9em;
   text-decoration: none;
   color: black;
 }
