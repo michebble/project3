@@ -17,9 +17,9 @@
         <%= image_tag "intune.png" %>
       </div>
       <% if logged_in?%>
-        <a class="logo-parent" href="/users/<%= current_user.id %>"><h1 class="logo-text">InTune</h1></a>
+        <a class="logo-parent" href="/users/<%= current_user.id %>"></a><h1 class="logo-text">InTune</h1>
       <% else %>
-        <a class="logo-parent" href="/login"><h1 class="logo-text">InTune</h1></a>
+        <a class="logo-parent" href="/login"></a><h1 class="logo-text">InTune</h1>
       <% end %>
       <% if logged_in? %>
         <form action="/session" method="post">
