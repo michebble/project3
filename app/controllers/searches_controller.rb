@@ -42,12 +42,14 @@ class SearchesController < ApplicationController
       matched_search = search_matches.sample
       @match_user = matched_search.user
       @conversation_url = create_room(@user,@match_user,matched_search)
+      render :match
     else
       @match_user = nil
+      redirect_to '/searches/new'
     end
 
     #REDIRECT MATCH SHOW
-    render :match
+    
 
   end
 
