@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get '/searches/try_again', to: 'searches#try_again'
   resources :searches
   resources :users
-   
+
   get '/','/login', to: 'session#new'
   post '/session', to: 'session#create'
   delete '/session', to: 'session#destroy'
@@ -9,4 +10,6 @@ Rails.application.routes.draw do
 
   get '/callback/', to: 'session#spotify_callback'
   get '/match/', to: 'searches#find_match'
+
+
 end
