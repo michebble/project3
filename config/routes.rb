@@ -9,4 +9,9 @@ Rails.application.routes.draw do
 
   get '/callback/', to: 'session#spotify_callback'
   get '/match/', to: 'searches#find_match'
+
+  namespace :api do #points to api folder in controllers
+    get '/api/match/' to:'api/searches#find_match'
+  end
+
 end
