@@ -13,46 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
 * {
   box-sizing: border-box;
-  padding:0;
+  padding: 0;
   margin: 0;
 }
-
 
 body {
   font-family: 'Montserrat', sans-serif;
   overflow: hidden;
-
 }
-
-
 
 header {
   height: 16em;
-  background-color: white;
-  width: 100%;
+  /* background-color: black; */
+  width: 100vw;
   margin: 0;
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   display: flex;
   align-items: center;
-  /* box-shadow: 0px 20px 25px lightgrey; */
 }
+
 .logo img {
   width: 12.5em;
   height: 12.5em;
   object-fit: contain;
 }
+
 .logo {
   margin: 3.125em;
 }
+
 .logo-text {
   font-size: 6em;
   text-decoration: none;
   color: black;
 }
+
 .logo-parent {
   text-decoration: none;
 }
@@ -63,9 +63,7 @@ header {
   right: 3.125em;
 }
 
-@media only screen
-and (min-device-width: 25em)
-and (min-width: 25em) {
+@media only screen and (min-device-width: 26em) and (min-width: 26em) {
   body {
     font-size: 0.5em;
   }

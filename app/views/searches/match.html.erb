@@ -2,7 +2,7 @@
 
   <div class="no_match_wrapper">
 
-<img src="<%= @search.img_url %>" alt="" class="album-img">
+    <img src="<%= @search.img_url %>" alt="" class="album-img">
 
     <div class="user-header">
 
@@ -24,19 +24,20 @@
     <h2>
       <%= @user.name %>
     </h2>
+
     <h4>
-      matched with
+      You are in tune with
     </h4>
+
     <h2>
       <%= @match_user.name %>
     </h2>
+
   </div>
 
   <div class="user-main">
-    <a href="<%=  %>"></a>
 
-    <a href="<%= @conversation_url %>">Start Conversation
-    </a>
+    <a href="<%= @conversation_url %>">Start Conversation</a>
 
   </div>
 <% end %>

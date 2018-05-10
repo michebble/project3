@@ -3,11 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user-header {
-  padding: 18.75em 3.125em 3.125em;
-  width: 100vw;
+  margin-top: 18.75em;
+  margin-bottom: 3.125em;
+  margin-left: 3.125em;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .username {
@@ -22,6 +25,7 @@
   height: 15.625em;
   border-radius: 50%;
   background-color: blue;
+  margin-right: 3.125em;
 }
 
 .profile-pic img {
@@ -32,37 +36,46 @@
 }
 
 .user-main {
-  margin: 0 50px;
-  width: 90vw;
-  height: 53.125em;
+  margin: 0 3.125em;
+  margin-top: 1.25em;
+  width: 100vw;
+  height: 45vh;
   overflow: scroll;
 }
 .logout {
   font-size: 1em;
-  position:relative;
-  left: 50px;
+  position:absolute;
+  left: 1.6em;
   margin-top: 30px;
   font-family: 'Montserrat', sans-serif;
+  border: none;
+  background-color: white;
+
 }
 
 .searched-song-div {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 1.25em;
 }
 
 .song-img {
-  width: 150px;
-  height: 150px;
+  width: 9.375em;
+  height: 9.375em;
   background-color: lightblue;
 }
 
 .searched-song-info {
-  padding-left: 50px;
+  padding-left: 3.125em;
 }
 
 .song-title {
   font-size: 2em;
+}
+.searched-song-time {
+  width: 10em;
+  margin-right: 3em;
+  margin-left: auto;
 }
 
 h2 {
@@ -75,10 +88,14 @@ h3 {
   font-weight: normal;
   margin: 0;
 }
+h5 {
+  font-size: 1.5em;
+  font-weight: normal;
+}
 
 .search-btn {
   background-color: red;
-  height: 200px;
+  height: 12.5em;
   width: 100%;
   display: inline-flex;
   justify-content: center;
@@ -102,7 +119,7 @@ h3 {
 // }
 
 .convo-icon img {
-  width: 20px;
-  height: 20px;
+  width: 1.25em;
+  height: 1.25em;
   border-radius: 50%;
 }
