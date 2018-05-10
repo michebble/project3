@@ -36,6 +36,7 @@
   width: 100%;
   height: 250px;
 }
+
 .song-info {
   overflow: scroll;
 }
@@ -44,6 +45,14 @@
   width: 150px;
   height: 150px;
   margin-right: 20px;
+}
+
+.match-album-img {
+  border: solid;
+  width: 600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .prompt {
@@ -61,8 +70,8 @@
 }
 
 .no_match {
-    margin-bottom: 300px;
-    margin-top: 300px;
+  margin-bottom: 300px;
+  margin-top: 300px;
 }
 
 .no_match_wrapper {
@@ -87,6 +96,7 @@ h4 {
   border-radius: 50%;
   box-shadow: 0 0 0 0 #0866f6;
 }
+
 .pulse-button:focus {
   outline-style: none;
 }
