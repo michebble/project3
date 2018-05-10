@@ -10,7 +10,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 .username {
@@ -36,21 +35,20 @@
 }
 
 .user-main {
-  margin: 0 3.125em;
-  margin-top: 1.25em;
+  margin: 1.25em 3.125em 0;
   width: 100vw;
   height: 45vh;
   overflow: scroll;
 }
+
 .logout {
   font-size: 1em;
-  position:absolute;
+  position: absolute;
   left: 1.6em;
   margin-top: 30px;
   font-family: 'Montserrat', sans-serif;
   border: none;
   background-color: white;
-
 }
 
 .searched-song-div {
@@ -72,6 +70,7 @@
 .song-title {
   font-size: 2em;
 }
+
 .searched-song-time {
   width: 10em;
   margin-right: 3em;
@@ -88,6 +87,7 @@ h3 {
   font-weight: normal;
   margin: 0;
 }
+
 h5 {
   font-size: 1.5em;
   font-weight: normal;
@@ -111,12 +111,6 @@ h5 {
   text-decoration: none;
   color: white;
 }
-// .user-header img {
-//   width: 400px;
-//   height: 400px;
-//   border-radius: 50%;
-//   background-color: blue;
-// }
 
 .convo-icon img {
   width: 1.25em;

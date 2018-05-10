@@ -1,8 +1,9 @@
 class SessionController < ApplicationController
-
+layout "home"
   def new
 
     @spotify_service = "https://accounts.spotify.com/authorize/?client_id=#{ENV['CLIENT_ID']}&response_type=code&scope=user-read-private%20user-read-currently-playing&redirect_uri=#{ENV['INTUNED_CALLBACK']}/callback/"
+
 
 
   end

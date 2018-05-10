@@ -68,3 +68,21 @@ header {
     font-size: 0.5em;
   }
 }
+.login_header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login_header .logo img {
+  width: 50em;
+  height: 50em;
+  object-fit: contain;
+  margin-top: 20%;
+}
+
+.login-logo-text {
+  font-size: 6em;
+  text-decoration: none;
+  color: black;
+}
