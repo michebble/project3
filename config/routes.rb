@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   namespace :api do #points to api folder in controllers
     get '/api/match/' to:'api/searches#find_match'
+    post '/api/messages/', to: 'api/rooms#create'
+    get '/api/messages/', to: 'api/rooms#index'
   end
 
 end

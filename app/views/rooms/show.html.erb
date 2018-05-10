@@ -17,9 +17,9 @@
 
 </div>
 <div class="write">
-  <form action="/room" method="post">
-    <input type="hidden" id="room_id" value="<%= @room_id %>">
-    <!-- The above information can be pass like conversation_id -->
+  <form action="/message" method="post">
+    <input type="hidden" id="conversation_id" value="<%= @room_id %>">
+    <input type="hidden" id="user_id" value="<%= current_user.id %>">
     <input type="text" id="message" placeholder="type message...">
     <button class="message-submit">send</button>
   </form>
