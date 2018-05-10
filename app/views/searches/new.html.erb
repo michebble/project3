@@ -1,22 +1,22 @@
 <div class="new-search-div">
 
   <% if (@song_response.code == 200 &&
-   @song_response['is_playing']) %>
-   <div class="song-div">
-     <img src="<%= @album_image_url %>" alt="" class="album-img">
-     <div class="song-info">
-       <h2 class="search-title"><%= @song_name %> </h2>
-       <h3 class="song-artist"> <%= @song_artist %>  </h3>
-     </div>
-  </div>
-<h4 id="search-prompt-txt">Press button to match</h4>
-  <!-- <a href="<%= @match_url %>"> -->
-    <div class='container'>
-      <div id="icon" class="find-match-btn pulse-button anim-wait">
+@song_response['is_playing']) %>
+    <div class="song-div">
+      <img src="<%= @album_image_url %>" alt="" class="album-img">
+      <div class="song-info">
+        <h2 class="search-title"><%= @song_name %>
+        </h2>
+        <h3 class="song-artist">
+          <%= @song_artist %>
+        </h3>
       </div>
     </div>
+    <h4 id="search-prompt-txt">Press button to match</h4>
+    <div class='container'>
+      <div id="icon" class="find-match-btn pulse-button anim-wait"></div>
+    </div>
 
-    <!-- </a> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script type="text/javascript">
       var icon = document.querySelector('#icon');
@@ -27,11 +27,13 @@
           var options = {
             url: '<%= @match_url %>'
           }
-          $.ajax(options).done(function(result) {
+          $.ajax(options).done(function (result) {
             if (result.match_user) {
               location = result.conversation_url
-            }  else {
+            } else {
               document.querySelector('#search-prompt-txt').textContent = "No match, try again."
+              icon.classList.remove("anim-search");
+              icon.classList.add("anim-wait");
             }
           })
         }, 10000)
