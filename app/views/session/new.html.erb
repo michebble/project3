@@ -3,24 +3,14 @@
   <div class="logo">
     <%= image_tag "intune.png" %>
   </div>
-  <% if logged_in?%>
-    <a class="logo-parent" href="/users/<%= current_user.id %>"><h1 class="logo-text">InTune</h1></a>
-  <% else %>
-    <a class="logo-parent" href="/login"><h1 class="logo-text">InTune</h1></a>
-  <% end %>
-  <% if logged_in? %>
-    <form action="/session" method="post">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="hidden" name="_method" value="delete">
-      <!-- <button class="logout">logout</button> -->
-    </form>
+    <a class="logo-parent" href="/login"><h1 class="login-logo-text">InTune</h1></a>
 
-  <% end %>
+
 
 </header>
-<div class="login-div">
-  <h1 class="login">
-    <a class="button button1" href="<%= @spotify_service%>">Login</a>
+<div class="spotify-login-div">
+  <h1 class="spotify-login">
+    <a class="button button1" href="<%= @spotify_service%>">Login with Spotify</a>
   </h1>
 </div>
 
