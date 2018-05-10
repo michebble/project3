@@ -16,8 +16,6 @@ class SearchesController < ApplicationController
       @album_name = @song_response['item']['album']['name']
 
       @match_url = "/api/match?song_id=#{@song_id}&song_name=#{@song_name}&artist=#{@song_artist}&img_url=#{@album_image_url}&album=#{@album_name}"
-
-
     end
 
   end
