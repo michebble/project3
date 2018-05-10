@@ -54,6 +54,7 @@ header {
 }
 
 .logout {
+  background-image: asset-url('log-out.png')
   font-size: 2em;
   position: absolute;
   right: 50px;
