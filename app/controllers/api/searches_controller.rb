@@ -10,6 +10,7 @@ class Api::SearchesController < ApplicationController
     search.album = params['album']
     search.user_id = user.id
     search.save
+    
     render json: search
   end
 
