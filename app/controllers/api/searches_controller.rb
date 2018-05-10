@@ -1,12 +1,5 @@
 class Api::SearchesController < ApplicationController
 
-  def show_match
-    @user = User.find(session[:user_id])
-    @match_user = User.find(params[:match_user_id])
-    @conversation_url = params[:conversation_url]
-    render :match
-  end
-
   def find_match
     user = User.find(session[:user_id])
     search = Search.new
