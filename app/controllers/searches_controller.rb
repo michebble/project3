@@ -47,8 +47,6 @@ class SearchesController < ApplicationController
       @match_user = nil
       redirect_to '/searches/new'
     end
-
-    #REDIRECT MATCH SHOW
     
 
   end
