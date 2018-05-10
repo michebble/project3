@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    
     <header>
       <div class="logo">
         <%= image_tag "intune.png" %>
@@ -21,14 +22,7 @@
       <% else %>
         <a class="logo-parent" href="/login"><h1 class="logo-text">InTune</h1></a>
       <% end %>
-      <% if logged_in? %>
-        <form action="/session" method="post">
-          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <input type="hidden" name="_method" value="delete">
-          <button class="logout"><%= image_tag 'log-out.png' %></button>
-        </form>
 
-      <% end %>
 
     </header>
     <%= yield %>
