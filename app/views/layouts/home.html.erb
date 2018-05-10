@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InTuneD</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <%= favicon_link_tag 'favicon.png' %>
+  </head>
+
+  <body>
+
+<!-- logo LARGE in header -->
+<header class="login_header">
+  <div class="logo">
+    <%= image_tag "intune.png" %>
+  </div>
+    <a class="logo-parent" href="/login"><h1 class="login-logo-text">InTune</h1></a>
+</header>
+<%= yield %>
+</body>
+</html>
