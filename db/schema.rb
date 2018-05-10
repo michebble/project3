@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_09_054206) do
+ActiveRecord::Schema.define(version: 2018_05_10_044050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,15 +34,6 @@ ActiveRecord::Schema.define(version: 2018_05_09_054206) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "participants", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "conversation_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["conversation_id"], name: "index_participants_on_conversation_id"
-    t.index ["user_id"], name: "index_participants_on_user_id"
-  end
-
   create_table "searches", force: :cascade do |t|
     t.text "song_id"
     t.text "song_name"
@@ -52,6 +43,9 @@ ActiveRecord::Schema.define(version: 2018_05_09_054206) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "paired_user_id"
+    t.bigint "conversations_id"
+    t.index ["conversations_id"], name: "index_searches_on_conversations_id"
     t.index ["user_id"], name: "index_searches_on_user_id"
   end
 
@@ -65,7 +59,6 @@ ActiveRecord::Schema.define(version: 2018_05_09_054206) do
 
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
-  add_foreign_key "participants", "conversations"
-  add_foreign_key "participants", "users"
+  add_foreign_key "searches", "conversations", column: "conversations_id"
   add_foreign_key "searches", "users"
 end

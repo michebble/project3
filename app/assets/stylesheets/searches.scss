@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .find-match-btn {
-  height: 600px;
-  width: 600px;
+  height: 37.5em;
+  width: 37.5em;
   background-image: asset-url('icon.png');
   background-size: contain;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 20px 20px 25px #7eb3ff;
+  box-shadow: 1.25em 1.25em 1.5625em #7eb3ff;
   margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .new-search-div {
-  padding-top: 400px;
+  padding-top: 25em;
   background-color: #DEECFF;
   height: 100vh;
 }
@@ -30,11 +30,11 @@
   align-items: center;
   position: absolute;
   bottom: 0;
-  padding: 0 50px;
+  padding: 0 3.125em;
   background-color: black;
   color: white;
   width: 100%;
-  height: 250px;
+  height: 15.625em;
 }
 
 .song-info {
@@ -42,9 +42,9 @@
 }
 
 .album-img {
-  width: 150px;
-  height: 150px;
-  margin-right: 20px;
+  width: 9.375em;
+  height: 9.375em;
+  margin-right: 1.25em;
 }
 
 .match-album-img {
@@ -57,12 +57,12 @@
 
 .prompt {
   font-size: 4em;
-  margin: 0 50px;
+  margin: 0 3.125em;
 }
 
 .container {
-  height: 600px;
-  width: 600px;
+  height: 37.5em;
+  width: 37.5em;
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
   margin: 0 auto;
@@ -70,28 +70,32 @@
 }
 
 .no_match {
+<<<<<<< HEAD
   margin-bottom: 300px;
   margin-top: 300px;
+=======
+  margin-bottom: 18.75em;
+  margin-top: 18.75em;
+>>>>>>> master
 }
 
 .no_match_wrapper {
   background-image: url("");
-  // background-color: yellow;
 }
 
 h4 {
   text-align: center;
   color: white;
-  margin-bottom: 100px;
+  margin-bottom: 16.25em;
   font-size: 2em;
-  text-shadow: 0 0 20px #7eb3ff;
+  text-shadow: 0 0 1.25em #7eb3ff;
 }
 
 .pulse-button {
   position: absolute;
   top: 0;
-  width: 600px;
-  height: 600px;
+  width: 37.5em;
+  height: 37.5em;
   cursor: pointer;
   border-radius: 50%;
   box-shadow: 0 0 0 0 #0866f6;
@@ -119,7 +123,7 @@ h4 {
 
   99% {
     transform: scale(1);
-    box-shadow: 0 0 0 500px rgba(#5a99d4, 0);
+    box-shadow: 0 0 0 31.25em rgba(#5a99d4, 0);
   }
 
   100% {
