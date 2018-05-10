@@ -9,7 +9,7 @@
        <h3 class="song-artist"> <%= @song_artist %>  </h3>
      </div>
   </div>
-<h4>Press to search</h4>
+<h4 id="search-prompt-txt">Press to search</h4>
   <!-- <a href="<%= @match_url %>"> -->
     <div class='container'>
       <div id="icon" class="find-match-btn pulse-button anim-wait">
@@ -23,8 +23,13 @@
         icon.classList.remove("anim-wait");
         icon.classList.add("anim-search");
         setTimeout(function () {
+          // if (<%=@match_user%> === nil) {
+          //   document.querySelector('#search-prompt-txt').textContent = "No match, try again."
+          // } else {
           location = '<%= @match_url %>'
+          // }
         }, 10000)
+
       })
     </script>
 
