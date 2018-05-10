@@ -15,7 +15,9 @@ class SearchesController < ApplicationController
       @album_image_url = @song_response['item']['album']['images'][0]['url']
       @album_name = @song_response['item']['album']['name']
 
-      @match_url = "/match?song_id=#{@song_id}&song_name=#{@song_name}&artist=#{@song_artist}&img_url=#{@album_image_url}&album=#{@album_name}"
+      @match_url = "/api/match?song_id=#{@song_id}&song_name=#{@song_name}&artist=#{@song_artist}&img_url=#{@album_image_url}&album=#{@album_name}"
+
+
     end
 
   end
@@ -23,7 +25,7 @@ class SearchesController < ApplicationController
 
   def find_match
 
-
+   
     @user = User.find_by(spotify_id: session[:spotify_id])
     search = Search.new
     search.song_id = params['song_id']

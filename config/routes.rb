@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   get '/room', to: 'rooms#show'
 
   get '/callback/', to: 'session#spotify_callback'
-  get '/match/', to: 'searches#find_match'
+  # get '/match/', to: 'searches#find_match'
 
   namespace :api do #points to api folder in controllers
-    get '/api/match/' to:'api/searches#find_match'
-    post '/api/messages/', to: 'api/rooms#create'
-    get '/api/messages/', to: 'api/rooms#index'
+    get '/match/', to:'searches#find_match'
+    post '/messages/', to: 'rooms#create'
+    get '/messages/', to: 'rooms#index'
   end
 
 end
