@@ -48,11 +48,22 @@
 }
 
 .match-album-img {
-  border: solid;
-  width: 600px;
-  height: 600px;
+  // border: solid;
+  width: 50em;
+  height: 50em;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
+}
+
+.album-img-match {
+  width: 50em;
+  height: 50em;
+  // margin-right: 1.25em;
+}
+
+img .album-img-match {
+  filter: blur(5px);
 }
 
 .prompt {

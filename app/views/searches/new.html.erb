@@ -29,13 +29,8 @@
           }
           $.ajax(options).done(function (result) {
             if (result.match_user) {
-<<<<<<< HEAD
-              location = `/match?match_user_id=${result.match_user['id']}&conversation_url=${result.conversation_url}`
-            }  else {
-=======
               location = result.conversation_url
             } else {
->>>>>>> master
               document.querySelector('#search-prompt-txt').textContent = "No match, try again."
               icon.classList.remove("anim-search");
               icon.classList.add("anim-wait");

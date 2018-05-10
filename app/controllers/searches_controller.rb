@@ -20,6 +20,10 @@ class SearchesController < ApplicationController
 
   end
 
+  def show
+    @hello = "Hello World"
+  end
+
 
   # def find_match
 
