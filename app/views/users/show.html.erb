@@ -1,6 +1,11 @@
 
 <div class="user-header">
   <h1 class="username"> <%= @user.name %> </h1>
+  <form action="/session" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="delete">
+    <button class="logout">logout</button>
+  </form>
   <div class="profile-pic">
     <img src="<%= @user.img_url%>" alt="">
   </div>
