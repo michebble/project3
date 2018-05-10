@@ -45,12 +45,18 @@ class SearchesController < ApplicationController
       render :match
     else
       @match_user = nil
-      redirect_to '/searches/new'
+      redirect_to '/searches/try_again'
     end
-    
+
+    #REDIRECT MATCH SHOW
+
 
   end
 
+  def try_again
+    sleep(5)
+    redirect_to '/searches/new'
+  end
 
   def create_room(user1, user2, search) 
     conversation = Conversation.new

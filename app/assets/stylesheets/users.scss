@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user-header {
-  padding: 300px 50px 50px;
+  padding: 18.75em 3.125em 3.125em;
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -18,15 +18,15 @@
 }
 
 .profile-pic {
-  width: 250px;
-  height: 250px;
+  width: 15.625em;
+  height: 15.625em;
   border-radius: 50%;
   background-color: blue;
 }
 
 .profile-pic img {
-  width: 250px;
-  height: 250px;
+  width: 15.625em;
+  height: 15.625em;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -34,8 +34,15 @@
 .user-main {
   margin: 0 50px;
   width: 90vw;
-  height: 850px;
+  height: 53.125em;
   overflow: scroll;
+}
+.logout {
+  font-size: 1em;
+  position:relative;
+  left: 50px;
+  margin-top: 30px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .searched-song-div {
@@ -78,7 +85,6 @@ h3 {
   align-items: center;
   position: fixed;
   bottom: 0;
-  // margin-left: -50px;
 }
 
 .search-btn a {

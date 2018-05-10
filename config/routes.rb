@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get '/searches/try_again', to: 'searches#try_again'
   resources :searches
   resources :users
-   
+
   get '/','/login', to: 'session#new'
   post '/session', to: 'session#create'
   delete '/session', to: 'session#destroy'
