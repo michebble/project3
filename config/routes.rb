@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   get '/callback/', to: 'session#spotify_callback'
   get '/match/', to: 'searches#find_match'
 
-  post '/messages/', to: 'rooms#api_post_messages'
-  get '/messages/', to: 'rooms#api_get_messages'
-
+  namespace :api do #points to api folder in controllers
+    get '/api/match/' to:'api/searches#find_match'
+    post '/api/messages/', to: 'api/rooms#create'
+    get '/api/messages/', to: 'api/rooms#index'
+  end
 
 end
