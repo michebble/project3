@@ -1,10 +1,6 @@
 class Api::SearchesController < ApplicationController
   
-  def find_match
-
-
-   
-
+  def add_search
     @user = User.find(session[:user_id])
     @search = Search.new
     @search.song_id = params['song_id']
@@ -14,7 +10,9 @@ class Api::SearchesController < ApplicationController
     @search.album = params['album']
     @search.user_id = @user.id
     @search.save
+  end
 
+  def find_match
     #DB QUERY
     @search_matches = Search.where(:song_id => @search.song_id).where.not(:user_id => @user.id).where("created_at > ?", 5.minutes.ago)
     if @search_matches.count > 0
