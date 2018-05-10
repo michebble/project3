@@ -2,7 +2,7 @@
 
   <% @participants.each do |participant| %>
     <h4 class="message-user"> <%= participant.name %> </h4>
-  <% end %>  
+  <% end %>
 
   <% @messages.each do |message| %>
     <h3 class="message-user">
@@ -35,6 +35,7 @@
       url: '/room',
       data: {
         content: $("#message").val(),
+        // /api/messages
         room_id: $('#room_id').val()
       },
       method: 'post'
