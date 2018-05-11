@@ -1,8 +1,8 @@
 <div class="message-div">
 
-    <h5 class="message-user">Francisco </h5>
+    <h5 class="message-user"><%= @user.name %></h5>
     <h2 class="message-content">Hello Maria</h2>
-    <h3 class="message-date">message.created_at</h3>
+    <h3 class="message-date"><%= @message.created_at %></h3>
 
 </div>
 <div class="write">
@@ -16,6 +16,7 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script type="text/javascript">
+
   var $submitBtn = $('.message-submit');
 
   $submitBtn.on('click', function (event) {
@@ -23,15 +24,15 @@
     var options = {
       url: '/room',
       data: {
-        content: $("#message").val(),
-        // /api/messages
-        room_id: $('#room_id').val()
+        content: $('#message').val(),
+        room_id: $('#room_id').val(),
+        conversation_id: $('#conversation_id'),
+        user_id: $('#user_id')
       },
       method: 'post'
     }
     $.ajax(options).done(function (res) {
-
-      $('.likes-count').text(res.likes_count)
+      $('').text(res.)
     });
   })
 </script>
