@@ -33,16 +33,16 @@
   width: 15.625em;
   height: 15.625em;
   border-radius: 50%;
-  background-color: blue;
+  background-color: lightgrey;
   margin-right: 3.125em;
 }
 
-.profile-pic img {
-  width: 15.625em;
-  height: 15.625em;
-  border-radius: 50%;
-  object-fit: cover;
-}
+// .profile-pic img {
+//   width: 15.625em;
+//   height: 15.625em;
+//   border-radius: 50%;
+//   object-fit: cover;
+// }
 
 .user-main {
   margin: 1.25em 3.125em;
@@ -51,14 +51,11 @@
   overflow: scroll;
 }
 
-.logout {
-  font-size: 1em;
+.logout i{
+  font-size: 0.7em;
   position: absolute;
-  left: 1.6em;
-  margin-top: 30px;
-  font-family: 'Montserrat', sans-serif;
-  border: none;
-  background-color: white;
+  right: 1em;
+  top: 1em;
 }
 
 .searched-song-div {
