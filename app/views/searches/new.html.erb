@@ -20,24 +20,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script type="text/javascript">
       var icon = document.querySelector('#icon');
+
       document.querySelector('.container').addEventListener('click', function () {
         icon.classList.remove("anim-wait");
         icon.classList.add("anim-search");
-        setTimeout(function () {
-          var options = {
-            url: '<%= @match_url %>'
-          }
-          $.ajax(options).done(function (result) {
-            if (result.match_user) {
-              location = result.conversation_url
-            } else {
-              document.querySelector('#search-prompt-txt').textContent = "No match, try again."
-              icon.classList.remove("anim-search");
-              icon.classList.add("anim-wait");
-            }
-          })
-        }, 10000)
-
+        document.querySelector('#search-prompt-txt').textContent = "Searching..."
+        var options = {
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': $('meta[name=csrf-token]').prop('content')
+          },
+          url: "<%= @search_url %>",
+          method: "POST"
+        }
+        $.ajax(options).done(function (result) {
+          console.log(result)
+          document.querySelector('#search-prompt-txt').textContent = "No match, try again."
+          icon.classList.remove("anim-search");
+          icon.classList.add("anim-wait");
+        })
       })
     </script>
 

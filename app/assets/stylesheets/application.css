@@ -48,9 +48,13 @@ header {
 }
 
 .logo-text {
-  font-size: 9em;
+  font-size: 8em;
   text-decoration: none;
   color: black;
+}
+
+.user-login-text {
+  text-decoration: none;
 }
 
 .logo-parent {
@@ -58,9 +62,10 @@ header {
 }
 
 .logout {
-  font-size: 2em;
-  position: absolute;
+  font-size: 4em;
+  position: inherit;
   right: 3.125em;
+  margin-right: 2em;
 }
 
 @media only screen and (min-device-width: 26em) and (min-width: 26em) {
@@ -68,6 +73,7 @@ header {
     font-size: 0.5em;
   }
 }
+
 .login_header {
   height: 100vh;
   display: flex;

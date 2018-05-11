@@ -1,0 +1,28 @@
+<div class="user-header-matched">
+
+  <h3>
+    You are in tune with
+  </h3>
+
+  <div class="">
+
+    <h2> <%= @paired_user.name %> </h2>
+
+    <!-- matched_user name -->
+  </div>
+
+</div>
+
+<div class="match-album-img">
+  <img src="<%=@match_info.img_url%>" alt="" class="album-img-match">
+
+  <h1 class="spotify-login">
+    <a class="button_2 button2" href="">Start Conversation</a>
+    <!-- here is where we put the information of the room id -->
+  </h1>
+
+  <h1 class="spotify-login">
+    <a class="button_2 button2" href="">Search Again</a>
+  </h1>
+
+</div>
