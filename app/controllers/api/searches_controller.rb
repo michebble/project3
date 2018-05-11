@@ -37,10 +37,10 @@ class Api::SearchesController < ApplicationController
       matched_search.paired_user_id = search.user.id
       matched_search.save
 
-      conversation_url = "/room?room_id=#{conversation.id}"
-      result = {"match_user" => match_user, "conversation_url" => conversation_url}
+      match_show_url = "/searches/#{conversation.id}"
+      result = {"match_show_url" => match_show_url}
     else
-      result = {"match_user" => nil, "conversation_url" => nil}
+      result = {"conversation_url" => nil}
     end
     result.to_json
     render json: result
