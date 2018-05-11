@@ -24,6 +24,7 @@
       document.querySelector('.container').addEventListener('click', function () {
         icon.classList.remove("anim-wait");
         icon.classList.add("anim-search");
+        document.querySelector('#search-prompt-txt').textContent = "Searching..."
         var options = {
           headers: {
             'Content-Type': 'application/json',
