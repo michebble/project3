@@ -49,8 +49,8 @@
 
             $.ajax(match_options).done( function(result_match){
               console.log(result_match);
-              if(result_match.conversation_url != null){
-                location.href = result_match.conversation_url;
+              if(result_match.match_show_url != null){
+                location.href = result_match.match_show_url;
               }
             })
           }

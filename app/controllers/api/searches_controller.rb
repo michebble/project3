@@ -40,7 +40,7 @@ class Api::SearchesController < ApplicationController
       match_show_url = "/searches/#{conversation.id}"
       result = {"match_show_url" => match_show_url}
     else
-      result = {"conversation_url" => nil}
+      result = {"match_show_url" => nil}
     end
     result.to_json
     render json: result
