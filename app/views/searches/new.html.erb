@@ -24,6 +24,7 @@
       document.querySelector('.container').addEventListener('click', function () {
         icon.classList.remove("anim-wait");
         icon.classList.add("anim-search");
+<<<<<<< HEAD
         document.querySelector('#search-prompt-txt').textContent = "Searching..."
 
         setTimeout(function () {
@@ -43,6 +44,22 @@
           })
         }, 10000)
 
+=======
+        var options = {
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': $('meta[name=csrf-token]').prop('content')
+          },
+          url: "<%= @search_url %>",
+          method: "POST"
+        }
+        $.ajax(options).done(function (result) {
+          console.log(result)
+          document.querySelector('#search-prompt-txt').textContent = "No match, try again."
+          icon.classList.remove("anim-search");
+          icon.classList.add("anim-wait");
+        })
+>>>>>>> master
       })
     </script>
 
