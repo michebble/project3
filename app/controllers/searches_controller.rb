@@ -22,7 +22,9 @@ class SearchesController < ApplicationController
 
 
   def show
-    @hello = "Hello World"
+    @user = User.find(session[:user_id])
+    @match_info = Search.where(user_id: session[:user_id], conversations_id: params[:room_id] ).first
+    @paired_user = User.find(@match_info.paired_user_id)
   end
 
 
