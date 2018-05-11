@@ -20,9 +20,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script type="text/javascript">
       var icon = document.querySelector('#icon');
+
       document.querySelector('.container').addEventListener('click', function () {
         icon.classList.remove("anim-wait");
         icon.classList.add("anim-search");
+        document.querySelector('#search-prompt-txt').textContent = "Searching..."
         var options = {
           headers: {
             'Content-Type': 'application/json',
