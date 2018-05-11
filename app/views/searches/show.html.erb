@@ -3,18 +3,22 @@
   <h3>
     You are in tune with
   </h3>
+
   <div class="">
-    <h2>Matilda Rutherford</h2>
+
+    <h2> <%= @paired_user.name %> </h2>
+
     <!-- matched_user name -->
   </div>
 
 </div>
 
 <div class="match-album-img">
-  <img src="https://i1.wp.com/24.media.tumblr.com/tumblr_m61qlxOiGC1qdrz3yo1_1280.jpg?zoom=2" alt="" class="album-img-match">
+  <img src="<%=@match_info.img_url%>" alt="" class="album-img-match">
 
   <h1 class="spotify-login">
     <a class="button_2 button2" href="">Start Conversation</a>
+    <!-- here is where we put the information of the room id -->
   </h1>
 
   <h1 class="spotify-login">
