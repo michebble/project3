@@ -40,7 +40,7 @@ layout "home"
       user = User.new
       user.spotify_id = user_response['id']
       user.name = user_response["display_name"].nil? ? user_response["id"] : user_response["display_name"]
-      user.img_url = user_response['images'].empty? ? "http://via.placeholder.com/50x50" : user_response['images'][0]['url']
+      user.img_url = user_response['images'].empty? ? "https://i.imgur.com/2YF4os2.png" : user_response['images'][0]['url']
       user.save
       session[:user_id] = user.id
 
