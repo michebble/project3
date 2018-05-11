@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <%= favicon_link_tag 'favicon.png' %>
   </head>
@@ -19,7 +20,8 @@
       </div>
       <% if logged_in?%>
         <a class="logo-parent" href="/users/<%= current_user.id %>"></a>
-        <h1 class="logo-text">InTune</h1>
+        <a href="/users/<%= current_user.id %>"class="user-login-text"><h1 class="logo-text">InTune</h1></a>
+
       <% else %>
         <a class="logo-parent" href="/login"></a>
         <h1 class="logo-text">InTune</h1>
