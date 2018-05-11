@@ -21,17 +21,18 @@
   $submitBtn.on('click', function (event) {
     event.preventDefault();
     var options = {
-      url: '/room',
+      url: '/api/messages',
       data: {
         content: $("#message").val(),
-        // /api/messages
         room_id: $('#room_id').val()
       },
       method: 'post'
     }
     $.ajax(options).done(function (res) {
-
-      $('.likes-count').text(res.likes_count)
+      $()
+      $('#massage').text("...")
     });
+
+    
   })
 </script>
