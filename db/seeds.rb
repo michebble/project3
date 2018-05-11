@@ -7,20 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Search.destroy_all
 User.destroy_all
+Conversation.destroy_all
+Message.destroy_all
 
-uno = User.create( name: 'Tony' )
-unouno = User.create( name: 'Maria' )
+# uno = User.create( name: 'Tony' )
+# unouno = User.create( name: 'Maria' )
 
-one = Search.create( song_name: "Knives Out", artist: "Radiohead" , user_id: User.first.id)
-two = Search.create( song_name: "Fly or Die", artist: "N.E.R.D" , user_id: User.first.id)
+# one = Search.create( song_name: "Knives Out", artist: "Radiohead" , user_id: User.first.id)
+# two = Search.create( song_name: "Fly or Die", artist: "N.E.R.D" , user_id: User.first.id)
 
-oneone = Search.create( song_name: "Knives Out", artist: "Radiohead" , user_id: User.second.id)
-twotwo = Search.create( song_name: "Fly or Die", artist: "N.E.R.D" , user_id: User.second.id)
+# oneone = Search.create( song_name: "Knives Out", artist: "Radiohead" , user_id: User.second.id)
+# twotwo = Search.create( song_name: "Fly or Die", artist: "N.E.R.D" , user_id: User.second.id)
 
-convo = Conversation.create
+# convo = Conversation.create
 
-part = Participant.create( user_id: User.first.id , conversation_id: Conversation.first.id )
-parpart = Participant.create( user_id: User.second.id , conversation_id: Conversation.first.id )
+# part = Participant.create( user_id: User.first.id , conversation_id: Conversation.first.id )
+# parpart = Participant.create( user_id: User.second.id , conversation_id: Conversation.first.id )
 
 
 testSearch = Search.create(user_id: 9, paired_user_id: 7, conversations_id: 5, img_url: "https://i.scdn.co/image/510382567f60490b2ffd8137068eabd7feb24bf7")
