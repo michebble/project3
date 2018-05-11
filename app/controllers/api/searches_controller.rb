@@ -30,10 +30,10 @@ class Api::SearchesController < ApplicationController
       conversation.artist = search.artist
       conversation.save
 
-      search.conversation_id = conversation.id
+      search.conversations_id = conversation.id
       search.paired_user_id = matched_search.user.id
       search.save
-      matched_search.conversation_id = conversation.id
+      matched_search.conversations_id = conversation.id
       matched_search.paired_user_id = search.user.id
       matched_search.save
 
