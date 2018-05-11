@@ -21,18 +21,4 @@ Message.destroy_all
 
 # convo = Conversation.create
 
-# part = Participant.create( user_id: User.first.id , conversation_id: Conversation.first.id )
-# parpart = Participant.create( user_id: User.second.id , conversation_id: Conversation.first.id )
 
-
-testSearch = Search.create(user_id: 9, paired_user_id: 7, conversations_id: 5, img_url: "https://i.scdn.co/image/510382567f60490b2ffd8137068eabd7feb24bf7")
-
-
-
-
-
-
-
-
-three = Message.create(user_id: User.first.id , conversation_id: Conversation.first.id , content: "Hello Maria")
-threethree = Message.create(user_id: User.second.id , conversation_id: Conversation.first.id , content: "Hello Tony")
