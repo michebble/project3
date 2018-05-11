@@ -23,8 +23,9 @@ class SearchesController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    @match_info = Search.where(user_id: session[:user_id], conversations_id: params[:room_id] ).first
+    @match_info = Search.where(user_id: session[:user_id], conversations_id: params[:id] ).first
     @paired_user = User.find(@match_info.paired_user_id)
+    @conversation_url = "/room?conversation_id=#{params[:id]}"
   end
 
 end
