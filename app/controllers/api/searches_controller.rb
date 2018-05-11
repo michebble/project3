@@ -38,9 +38,9 @@ class Api::SearchesController < ApplicationController
       matched_search.save
 
       conversation_url = "/room?room_id=#{conversation.id}"
-      result = {"match_user" => match_user, "conversation_url" => conversation_url}
+      result = {"conversation_url" => conversation_url}
     else
-      result = {"match_user" => nil, "conversation_url" => nil}
+      result = {"conversation_url" => nil}
     end
     result.to_json
     render json: result
