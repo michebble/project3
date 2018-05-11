@@ -22,17 +22,29 @@
   $submitBtn.on('click', function (event) {
     event.preventDefault();
     var options = {
-      url: '/room',
+      url: '/api/messages',
       data: {
+<<<<<<< HEAD
         content: $('#message').val(),
         room_id: $('#room_id').val(),
         conversation_id: $('#conversation_id'),
         user_id: $('#user_id')
+=======
+        content: $("#message").val(),
+        room_id: $('#room_id').val()
+>>>>>>> master
       },
       method: 'post'
     }
     $.ajax(options).done(function (res) {
+<<<<<<< HEAD
       $('').text(res.)
+=======
+      $()
+      $('#massage').text("...")
+>>>>>>> master
     });
+
+    
   })
 </script>

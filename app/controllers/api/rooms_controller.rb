@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
 
   def create
     message = Message.new
-    message.user_id = params[:user_id]
+    message.user_id = session[:user_id]
     message.conversation_id = params[:room_id]
     message.content = params[:message]
     message.save

@@ -33,11 +33,39 @@
           url: "<%= @search_url %>",
           method: "POST"
         }
-        $.ajax(options).done(function (result) {
-          console.log(result)
-          document.querySelector('#search-prompt-txt').textContent = "No match, try again."
-          icon.classList.remove("anim-search");
-          icon.classList.add("anim-wait");
+        $.ajax(options).done(function (result_search) {
+          // result is json version of search
+
+
+          var match_api_call = function(){
+            var match_options = {
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': $('meta[name=csrf-token]').prop('content')
+              },
+              url: `/api/match?search_id=${result_search.id}`,
+              method: "GET"
+            }
+
+            $.ajax(match_options).done( function(result_match){
+              console.log(result_match);
+              if(result_match.conversation_url != null){
+                location.href = result_match.conversation_url;
+              }
+            })
+          }
+
+          var stopSearchTimer = function(){
+            document.querySelector('#search-prompt-txt').textContent = "No match, try again."
+            icon.classList.remove("anim-search");
+            icon.classList.add("anim-wait");
+            clearInterval(searchTimer);
+          }
+
+          var searchTimer = setInterval(match_api_call, 2000);
+          setTimeout(stopSearchTimer,30000);
+
+          
         })
       })
     </script>
