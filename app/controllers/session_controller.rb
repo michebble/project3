@@ -35,7 +35,8 @@ layout "home"
 
     if !user.nil?
       session[:user_id] = user.id
-      redirect_to "/users/#{user.id}"
+      # redirect_to "/users/#{user.id}"
+      redirect_to "/searches/new"
     else
       user = User.new
       user.spotify_id = user_response['id']
@@ -44,7 +45,8 @@ layout "home"
       user.save
       session[:user_id] = user.id
 
-      redirect_to "/users/#{user.id}"
+      # redirect_to "/users/#{user.id}"
+      redirect_to "/searches/new"
     end
 
 
