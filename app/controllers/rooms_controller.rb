@@ -1,7 +1,9 @@
 class RoomsController < ApplicationController
 
   def show
-    # @participants = Participant.where(:conversation_id => @room_id)
+    @users = Searches.where(:conversation_id => @room_id)
+    @room_id = params[:room_id]
+    @messages = Message.where(conversation_id: @room_id).all.order('created_at DESC')
   end
 
 
